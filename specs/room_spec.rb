@@ -7,9 +7,10 @@ require("minitest/rg")
 class RoomTest < MiniTest::Test
 
   def setup
-    @guest1 = Guest.new("John")
-    @guest2 = Guest.new("Zsolt")
-    @guest3 = Guest.new("Tony")
+    @guest1 = Guest.new("John", 30)
+    @guest2 = Guest.new("Zsolt", 80)
+    @guest3 = Guest.new("Tony", 40)
+    @guest4 = Guest.new("Fred", 2)
     @song1 = Song.new("Bohemian Rhapsody", "Queen")
     @song2 = Song.new("Stairway to Heaven", "Led Zeppelin")
     @song3 = Song.new("Wish You Were Here", "Pink Floyd")
