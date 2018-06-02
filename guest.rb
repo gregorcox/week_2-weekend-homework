@@ -12,6 +12,18 @@ class Guest
     @wallet -= amount
   end
 
+  def check_if_room_has_favourite_song(room)
+    response = "My song isn't here"
+    for song in room.songs
+      if song.title == @favourite_song
+        response = "Whoo!"
+      end
+    end
+    return response
+  end
+
+
+
 
 
 

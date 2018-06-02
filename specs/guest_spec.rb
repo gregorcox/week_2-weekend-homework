@@ -23,4 +23,12 @@ class GuestTest < MiniTest::Test
     assert_equal(25, @guest3.wallet)
   end
 
+  def test_check_if_room_has_favourite_song__true
+    assert_equal("Whoo!", @guest1.check_if_room_has_favourite_song(@room1))
+  end
+
+  def test_check_if_room_has_favourite_song__false
+    assert_equal("My song isn't here", @guest2.check_if_room_has_favourite_song(@room1))
+  end
+
 end
