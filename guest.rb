@@ -1,11 +1,12 @@
 class Guest
 
-  attr_reader :name, :wallet, :favourite_song
+  attr_reader :name, :wallet, :favourite_song, :songs_sung
 
   def initialize(name, wallet, favourite_song)
     @name = name
     @wallet = wallet
     @favourite_song = favourite_song
+    @songs_sung = []
   end
 
   def pay_entrance_fee(amount)
@@ -22,16 +23,12 @@ class Guest
     return response
   end
 
+  def song_count
+    songs_sung.length()
+  end
 
-
-
-
-
-
-
-
-
-
-
+  def sing(song)
+    @songs_sung.push(song)
+  end
 
 end

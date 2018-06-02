@@ -27,13 +27,4 @@ class Room
     @songs.push(song)
   end
 
-
-
-
-
-
-
-
-
-
 end

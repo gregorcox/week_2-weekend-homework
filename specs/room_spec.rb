@@ -50,16 +50,4 @@ class RoomTest < MiniTest::Test
     assert_equal(3, @room1.songs.length())
   end
 
-
-
-
-
-
-
-
-
-
-
-
-
 end

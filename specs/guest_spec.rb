@@ -31,4 +31,10 @@ class GuestTest < MiniTest::Test
     assert_equal("My song isn't here", @guest2.check_if_room_has_favourite_song(@room1))
   end
 
+  def test_sing
+    @guest1.sing(@song2)
+    @guest1.sing(@song1)
+    assert_equal(2, @guest1.song_count)
+  end
+
 end
