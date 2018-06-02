@@ -8,6 +8,15 @@ class Room
     @songs = songs
   end
 
+  def check_in_guest(guest)
+    @guests.push(guest)
+  end
+
+  def check_out_guest(guest)
+    @guests.delete(guest)
+  end
+
+
 
 
 
