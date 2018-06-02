@@ -11,8 +11,9 @@ class Room
   end
 
   def check_in_guest(guest)
-    if @guests.length() < @capacity
+    if @guests.length() < @capacity && guest.wallet >= @entrance_fee
       @guests.push(guest)
+      guest.pay_entrance_fee(@entrance_fee)
     else
       return "You cannot enter the room"
     end

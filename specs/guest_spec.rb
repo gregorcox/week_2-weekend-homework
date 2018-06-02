@@ -18,23 +18,9 @@ class GuestTest < MiniTest::Test
     @room2 = Room.new("Classic Rock", [@guest1, @guest2], [@song1, @song2, @song3], 2, 5)
   end
 
-  def test_guest_has_sufficient_funds__true
-    assert_equal(true, @guest1.sufficient_funds?(@room1))
+  def test_pay_entrance_fee
+    @guest3.pay_entrance_fee(@room1.entrance_fee)
+    assert_equal(25, @guest3.wallet)
   end
-
-  def test_guest_has_sufficient_funds__false
-    assert_equal(false, @guest4.sufficient_funds?(@room1))
-  end
-
-  def test_pay_entrance_fee__sufficient_funds
-    @guest1.pay_entrance_fee(@room1)
-    assert_equal(15, @guest1.wallet)
-  end
-
-  def test_pay_entrance_fee__insufficient_funds
-    @guest4.pay_entrance_fee(@room1)
-    assert_equal(2, @guest4.wallet)
-  end
-
 
 end

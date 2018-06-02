@@ -28,6 +28,18 @@ class RoomTest < MiniTest::Test
     assert_equal(2, @room2.guests.length())
   end
 
+  def test_check_in_guest_to_room__sufficient_funds
+    @room1.check_in_guest(@guest3)
+    assert_equal(25, @guest3.wallet())
+    assert_equal(3, @room1.guests.length())
+  end
+
+  def test_check_in_guest_to_room__insufficient_funds
+    @room1.check_in_guest(@guest4)
+    assert_equal(2, @guest4.wallet)
+    assert_equal(2, @room1.guests.length())
+  end
+
   def test_check_out_guest_from_room
     @room1.check_out_guest(@guest1)
     assert_equal(1, @room1.guests.length())
