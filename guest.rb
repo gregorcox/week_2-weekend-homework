@@ -1,6 +1,6 @@
 class Guest
 
-  attr_reader :name, :wallet, :favourite_song, :songs_sung
+  attr_reader :name, :wallet, :favourite_song
 
   def initialize(name, wallet, favourite_song)
     @name = name
@@ -24,7 +24,7 @@ class Guest
   end
 
   def song_count
-    songs_sung.length()
+    @songs_sung.length()
   end
 
   def sing(song)
