@@ -1,6 +1,6 @@
 class Room
 
-  attr_reader :name, :guests, :songs, :capacity
+  attr_reader :name, :guests, :songs, :capacity, :entrance_fee
 
   def initialize(name, guests, songs, capacity, entrance_fee)
     @name = name
@@ -14,7 +14,7 @@ class Room
     if @guests.length() < @capacity
       @guests.push(guest)
     else
-      return "The room is full!"
+      return "You cannot enter the room"
     end
   end
 

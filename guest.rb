@@ -7,6 +7,12 @@ class Guest
     @wallet = wallet
   end
 
+  def sufficient_funds?(room)
+    return @wallet >= room.entrance_fee()
+  end
+
+
+
 
 
 
